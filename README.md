@@ -9,7 +9,7 @@ This runs stable diffusion v1.5, grabs images from an active Minecraft Window an
 - Minecraft Java Edition
 - Bandwidth internet connection to download the models
 
-# Installation:
+# Installation and running:
 
 1. Install Python 3.9 from https://www.python.org/downloads/
 2. Install the latest NVIDIA drivers from https://www.nvidia.com/Download/index.aspx?lang=en-us
@@ -24,7 +24,11 @@ This runs stable diffusion v1.5, grabs images from an active Minecraft Window an
 
 # Tips
 
-Best prompts are:
+You may play with the strenght and the camera distance from the objects.
+
+You will find all the images you generated inside the `tmp` folder with the name of the seed you used.
+
+Some good prompts are:
 - `An isometric drawing of a house, concept art, trending on artstation`
 - `crochet bunny with a scarf`
 - `cinematic mountainscape highly detailed, epic, with old town by greg rutkowski`
