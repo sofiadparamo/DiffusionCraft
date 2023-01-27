@@ -44,3 +44,4 @@ Best prompts are:
 - `realistic full body, Portrait painting of Tom Hiddleston as Cyborg Power Ranger, made by Michaelangelo, physical painting, Sharp focus,digital art, bright colors,fine art, trending on Artstation, unreal engine`
 
 Original Idea by: [ThoseSixFaces](https://github.com/TSFSean)
+Funding: [BobicraftMC](https://www.youtube.com/@BobicraftMC)
