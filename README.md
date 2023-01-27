@@ -43,4 +43,4 @@ Best prompts are:
 - `complex 3 d render hyper detail portrait of a mechanical cyborg robot, sci fi, full body, intricate, art by kazuhiko nakamura and hajime sorayama, 8 k octane detailed render, post processing, extremely hyperdetailed, intricate futuristic mechanic parts, maya, dark background, sharp focus, blender, cinematic lighting masterpiece, trending on artstation`
 - `realistic full body, Portrait painting of Tom Hiddleston as Cyborg Power Ranger, made by Michaelangelo, physical painting, Sharp focus,digital art, bright colors,fine art, trending on Artstation, unreal engine`
 
-Original Idea by: [ThoseSixFaces](github.com/TSFSean)
+Original Idea by: [ThoseSixFaces](https://github.com/TSFSean)
