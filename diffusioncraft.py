@@ -11,7 +11,7 @@ import torch
 import win32con
 import win32gui
 import win32ui
-from PIL import Image, UnidentifiedImageError
+from PIL import Image
 from PIL.ImageTk import PhotoImage
 from diffusers import StableDiffusionImg2ImgPipeline as SDi2iP
 from torch import Generator
@@ -21,6 +21,20 @@ def process_image_generation(seed: int, hwnd: int, prompt: str, strength: float,
     dfc: DiffusionCraft = DiffusionCraft(seed=seed, out_dir=out_dir)
 
     while True:
+        try:
+            h = open("tmp/h", "r")
+            s = open("tmp/s", "r")
+
+            hv = int(h.read())
+            sv = float(s.read())
+
+            if hv is not None and hv != 0:
+                hwnd = hv
+            if sv is not None and sv != 0:
+                strength = sv
+        except:
+            print("Update error, config file not ready")
+
         input_img: Image = dfc.grab_screenshot(hwnd)
 
         output_img: Image = dfc.generate_image(prompt=prompt, strength=strength, input_image=input_img)
@@ -100,7 +114,7 @@ class DiffusionCraft:
         print(f"Generating image with prompt {prompt} and strength {strength} using seed {self.seed}")
         with torch.autocast("cuda"):
             images: SDi2iP = self.pipe(image=input_image, prompt=prompt, strength=strength,
-                                       generator=self.generator, num_inference_steps=30).images
+                                       generator=self.generator, num_inference_steps=35).images
 
         # PIL image to rgb 512x512
         image: Image = images[0]
@@ -182,6 +196,9 @@ class DiffusionCraftUI:
             self.strength = strength_var.get()
             message: str = "Strength: " + str(strength_var.get())
             strength_label.config(text=message)
+            f = open("tmp/s", "w")
+            f.write(str(strength_var.get()))
+            f.close()
 
         # Strength slider
 
@@ -223,6 +240,10 @@ class DiffusionCraftUI:
             self.hwnd = selected_minecraft[0]
 
             hwnd_var.set(str(selected_minecraft))
+
+            f = open("tmp/h", "w")
+            f.write(str(self.hwnd))
+            f.close()
 
         # Initialize window value
         on_minecraft_window_select(None)
@@ -268,9 +289,7 @@ class DiffusionCraftUI:
 
                 output_image_label = Label(self.frame, bg='#36393F', borderwidth=0, image=output_img_render)
                 output_image_label.place(relx=0.05, rely=0.45, relwidth=0.5, relheight=0.5)
-            except UnidentifiedImageError:
-                pass
-            except OSError:
+            except:
                 pass
 
     def destroy_all_widgets(self) -> None:
