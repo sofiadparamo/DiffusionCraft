@@ -1,4 +1,4 @@
-# DiffusionCraft
+![DiffusionCraft](https://user-images.githubusercontent.com/7455707/215052100-0e752612-9ede-401c-b61e-d62fbe5f6c19.png)
 
 This runs stable diffusion v1.5, grabs images from an active Minecraft Window and runs an Image2Image pipeline using a text description to generate real-time art from the game.
 
