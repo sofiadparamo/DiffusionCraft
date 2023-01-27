@@ -1,0 +1,6 @@
+tmp/
+env/
+venv/
+build/
+.idea/
+dist/
