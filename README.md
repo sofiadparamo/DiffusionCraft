@@ -5,18 +5,23 @@ This runs stable diffusion v1.5, grabs images from an active Minecraft Window an
 # Requirements:
 - Windows 11 or 10
 - Python 3.9 installed (From the Microsoft store)
-- NVIDIA GPU with CUDA 11.4 and 8gb of vram
 - Minecraft Java Edition
 - Bandwidth internet connection to download the models
+- NVIDIA GPU with CUDA 11.4 and 8gb of vram
+<details><summary>Don't meet the requirements?</summary>There are ways to run stable diffuson on <a href="https://huggingface.co/CompVis/stable-diffusion-v1-4/discussions/29#630e49a583f64e3516785431">AMD Video Cards</a> and even in <a href="https://www.assemblyai.com/blog/how-to-run-stable-diffusion-locally-to-generate-images/#how-to-install-stable-diffusion-cpu">CPUs without a graphics card</a>, however, I don't plan to support AMD Video Cards nor CPU generations. If you want to try for yourself, just be aware that this script only runs on Windows, and AMD support is mainly focused on Linux. Also, if you try running it on CPU with no graphics card you may have a really bad time waiting for 5 to 10 minutes just to get a frame, so it would be better if you tried another way, like a <a href="https://colab.research.google.com/drive/1hs5dYbPHVDv3AhkpZTGhck7H2E_4NBwZ?usp=sharing">Google Collab with stable diffusion</a> where you upload your own screenshots. This is mostly intended for advanced users in an effort to point you towards the right direction.</details>
 
 # Installation and running:
 
 1. Install Python 3.9 from https://www.python.org/downloads/
 2. Install the latest NVIDIA drivers from https://www.nvidia.com/Download/index.aspx?lang=en-us
 3. Install CUDA from https://developer.nvidia.com/cuda-downloads
-4. Create virtual environment and install requirements
-    - `python -m venv env`
-    - `venv\Scripts\activate`
+4. Create virtual environment
+    - `python -m venv venv`
+5. Activate the virual environment
+    - If you're on CMD, use ``.\venv\Scripts\activate.bat``
+    - If you're on PowerShell, use ``.\venv\Scripts\Activate.ps1``
+      - Keep in mind you should have enabled scripts in Windows PS
+6. Install the requirements
     - `pip install -r requirements.txt`
 5. Open Minecraft and set the resolution to 768x768
 6. Run the script
